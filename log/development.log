@@ -773,3 +773,80 @@ Migrating to AddAuthorIdToPosts (20160119185429)
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160119185429"]]
   [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 200.113.234.186 at 2019-07-15 14:51:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-4.2.11.1/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 200.113.234.186 at 2019-07-15 14:52:01 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 314ms (Views: 309.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 200.113.234.186 at 2019-07-15 14:52:02 +0000
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 200.113.234.186 at 2019-07-15 14:52:02 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 200.113.234.186 at 2019-07-15 14:52:02 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 200.113.234.186 at 2019-07-15 14:52:02 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 200.113.234.186 at 2019-07-15 14:52:02 +0000
+
+
+Started GET "/posts/new" for 200.113.234.186 at 2019-07-15 14:52:16 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 200.113.234.186 at 2019-07-15 14:52:31 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pq1EervJs8Xnj5ywgyX6OZTWV+gBwIjKIZtO26M0eImkH+LyhGspKPhVpNCAWKX3vyPfqLlp5/HXIq+wdbDKmA==", "title"=>"1233", "description"=>"vvvvvv", "commit"=>"Submit Post"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY "authors"."id" ASC LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "1233"], ["description", "vvvvvv"], ["author_id", 1], ["created_at", "2019-07-15 14:52:31.050269"], ["updated_at", "2019-07-15 14:52:31.050269"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+Redirected to http://142.93.56.73:57113/posts/9
+Completed 302 Found in 26ms (ActiveRecord: 6.8ms)
+
+
+Started POST "/posts" for 200.113.234.186 at 2019-07-15 14:52:31 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pq1EervJs8Xnj5ywgyX6OZTWV+gBwIjKIZtO26M0eImkH+LyhGspKPhVpNCAWKX3vyPfqLlp5/HXIq+wdbDKmA==", "title"=>"1233", "description"=>"vvvvvv", "commit"=>"Submit Post"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY "authors"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "1233"], ["description", "vvvvvv"], ["author_id", 1], ["created_at", "2019-07-15 14:52:31.193880"], ["updated_at", "2019-07-15 14:52:31.193880"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://142.93.56.73:57113/posts/10
+Completed 302 Found in 10ms (ActiveRecord: 4.5ms)
+
+
+Started POST "/posts" for 200.113.234.186 at 2019-07-15 14:52:31 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pq1EervJs8Xnj5ywgyX6OZTWV+gBwIjKIZtO26M0eImkH+LyhGspKPhVpNCAWKX3vyPfqLlp5/HXIq+wdbDKmA==", "title"=>"1233", "description"=>"vvvvvv", "commit"=>"Submit Post"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors"  ORDER BY "authors"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "1233"], ["description", "vvvvvv"], ["author_id", 1], ["created_at", "2019-07-15 14:52:31.404179"], ["updated_at", "2019-07-15 14:52:31.404179"]]
+  [1m[35m (4.9ms)[0m  commit transaction
+Redirected to http://142.93.56.73:57113/posts/11
+Completed 302 Found in 11ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/posts/11" for 200.113.234.186 at 2019-07-15 14:52:31 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 48ms (Views: 36.6ms | ActiveRecord: 0.3ms)
